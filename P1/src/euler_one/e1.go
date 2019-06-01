@@ -23,11 +23,13 @@ func eulerOneBetter(n int) (int, int) {
 
 func eulerOneFastest(n int) (int, int) {
 	e := n
+	
 	for e%3 != 0 {
 		e--
 	}
 	e3 := e / 3
-	e = n - 1
+	e = n
+
 	for e%5 != 0 {
 		e--
 	}
@@ -36,10 +38,11 @@ func eulerOneFastest(n int) (int, int) {
 		e--
 	}
 	e15 := e / 15
+	//The basic summation function.
 	sumn := func(n int) int {
 		return (n*n + n) / 2
 	}
-	return 3*sumn(e3) + 5*sumn(e5) - 15*sumn(e15), n - 1
+	return 3*sumn(e3) + 5*sumn(e5) - 15*sumn(e15), n
 }
 
 func eulerOneNaive(n int) (int, int) {
@@ -61,13 +64,20 @@ func main(){
 	if len(os.Args) > 1{
 		n, e := strconv.Atoi(os.Args[1])
 		if e != nil{
-			panic("Could not convert argument 1 to an integer.")
+			fmt.Println("Could not convert argument 1 to an integer.")
+			return;
 		}
-		m,n = eulerOneFastest(n)
-		fmt.Println("The sum of all numbers 3 and five below ", n, " is :", m)
+		if n < 4{
+			fmt.Println("Enter a number greater than 3!")
+			return;
+		}
+		n--
+		//since euler one evaluates to n, set it to be 1 lower.
+		m,n = eulerOneFastest(n)		
+		fmt.Println("The sum of all numbers, multiples of 3 and five below ", n + 1, " is :", m)
 	} else{
-		n :=1000
+		n :=999
 		m,n = eulerOneFastest(n)
-		fmt.Println("The sum of all numbers 3 and five below ", n, " is :", m)
+		fmt.Println("The sum of all numbers, multiples 3 and five below ", n + 1, " is :", m)
 	}
 }

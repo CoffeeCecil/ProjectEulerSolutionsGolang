@@ -39,3 +39,7 @@ itself usually takes awhile to start up. So I'm benchmarking based off of the
 Golang built in test suite. I'm also including an exectutable that prints out
 the a verified answer for the project.
  
+ ##Compiling binaries
+
+ I'm compiling binaries in the Pn/bin folder with the command go build ../src/target_folder to get target_folder.exe. Paths are relative to the folder you'll
+ find this readme in.
