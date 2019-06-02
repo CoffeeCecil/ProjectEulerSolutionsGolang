@@ -25,8 +25,10 @@ which can sometimes yield faster solutions.
 
 ##Instructions
 
-Where assemblies, use go -test against the files in the source folder 
-to print out their testing results.
+Where assemblies exist, use 'go test . -v' against the files in 
+the source folder to print out their testing results. To get at 
+the benchmarks use 'go test -benchmem -bench .' to get a readout 
+of the speed and memory used by the project.
 
 Where solutions exist, simply execute the program in the bin after you've 
 built it on your system in the normal way, without arguments. This
@@ -39,7 +41,3 @@ itself usually takes awhile to start up. So I'm benchmarking based off of the
 Golang built in test suite. I'm also including an exectutable that prints out
 the a verified answer for the project.
  
- ##Compiling binaries
-
- I'm compiling binaries in the Pn/bin folder with the command go build ../src/target_folder to get target_folder.exe. Paths are relative to the folder you'll
- find this readme in.
