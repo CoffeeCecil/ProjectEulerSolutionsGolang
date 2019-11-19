@@ -33,10 +33,8 @@ Update 11/19/2019
 I was reviewing the source code for this project. In an embarassing case of
 operator fatigue I didn't write the correct project description. Because I did
 actually manage to figure out an ugly bit of code using mutex's and locks
-to correctly operate the Miller Rabin test, and this function was what was used
-since I first put this up. I think due to fatigue I did not write this.
-That code runs in 1/40th the time of the non-coroutine code. I certainly was using
-the function, but the report didn't reflect that.
+to correctly operate the Miller Rabin test, apparently up to the value given for this test. However, my assertion that I had not written an accurate test turned out to be accurate (see Project Euler 7). Mores the pitty because using channels and goroutines does speed up the code significantly for this project.
+I've updated the code here to use the most accurate version of the miller rabin test.
 
 ##Solution
 An exectutable program that takes an argument n.
